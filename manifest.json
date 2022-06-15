@@ -4,5 +4,19 @@
   "version": "1.0.0",
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+  "action":{
+    "16": ""
+    "32": ""
+    "48": ""
+    "128": ""
+  },
+  "default_icon":{
+    "16": ""
+    "32": ""
+    "48": ""
+    "128": ""
   }
+
+
 }
