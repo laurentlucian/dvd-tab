@@ -5,7 +5,6 @@ type DVDLogoState = {
   y: number;
   xSpeed: number;
   ySpeed: number;
-  turn: boolean;
 };
 
 type DVDLogoProps = {
@@ -13,7 +12,7 @@ type DVDLogoProps = {
   height: number;
 };
 
-const MS_PER_FRAME = 20;
+const MS_PER_FRAME = 5;
 const widthDVDLogo = 200;
 const heightDVDLogo = 97;
 
@@ -45,7 +44,6 @@ const DVDLogo = (props: DVDLogoProps) => {
     y: getRandomNumber(0, props.height - heightDVDLogo),
     xSpeed: 1,
     ySpeed: 1,
-    turn: false,
   });
   const [{ r, g, b }, setColor] = useState<{ r: number; g: number; b: number }>({
     r: getRandomNumber(100, 256),
@@ -69,14 +67,13 @@ const DVDLogo = (props: DVDLogoProps) => {
       y: state.y + state.ySpeed,
     });
 
-    if (state.x + widthDVDLogo >= props.width || (state.x <= 0 && state.turn === true)) {
-      console.log(state.turn);
-      setState({ ...state, xSpeed: -state.xSpeed, turn: false });
+    if (state.x + widthDVDLogo >= props.width || state.x <= 0) {
+      setState({ ...state, x: state.x + -state.xSpeed, xSpeed: -state.xSpeed });
       setRandomColors();
     }
 
-    if (state.y + heightDVDLogo >= props.height || (state.y <= 0 && state.turn === false)) {
-      setState({ ...state, ySpeed: -state.ySpeed, turn: true });
+    if (state.y + heightDVDLogo >= props.height || state.y <= 0) {
+      setState({ ...state, y: state.y + -state.ySpeed, ySpeed: -state.ySpeed });
       setRandomColors();
       return;
     }
