@@ -1,9 +1,18 @@
 {
   "manifest_version": 3,
   "name": "DVD Screensaver",
+  "description": "interactive dvd screensaver!",
   "version": "1.0.0",
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+  "permissions":["scripting"],
+  "action":{
+    "default_icon":{
+      "16": "src/public/favicon16.png",
+    "48": "src/public/favicon32.png",
+    "128": "src/public/favicon.ico"
+    }
   },
   "icons": {
     "16": "src/public/favicon16.png",
