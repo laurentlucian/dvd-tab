@@ -1,5 +1,4 @@
 import { Flex, Heading } from '@chakra-ui/react';
-import { Route, Routes } from 'react-router-dom';
 import DVDLogo from './DVDLogo';
 
 const svgWidth = 800;

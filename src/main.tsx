@@ -1,18 +1,15 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import React from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { ChakraProvider } from '@chakra-ui/react';
 import App from './App';
-import theme from './libs/theme';
 import Fonts from './libs/fonts';
-import { BrowserRouter } from 'react-router-dom';
+import theme from './libs/theme';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <Fonts />
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </ChakraProvider>
   </React.StrictMode>,
 );
