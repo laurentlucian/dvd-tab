@@ -61,18 +61,28 @@ const DVDLogo = (props: DVDLogoProps) => {
   };
 
   const moveDVDLogo = () => {
+    if (state.x + widthDVDLogo > props.width) {
+      return setState({ ...state, x: props.width - widthDVDLogo });
+    }
+    if (state.y + heightDVDLogo > props.height) {
+      return setState({
+        ...state,
+        y: props.height - heightDVDLogo,
+      });
+    }
+
     setState({
       ...state,
       x: state.x + state.xSpeed,
       y: state.y + state.ySpeed,
     });
 
-    if (state.x + widthDVDLogo >= props.width || state.x <= 0) {
+    if (state.x + widthDVDLogo === props.width || state.x <= 0) {
       setState({ ...state, x: state.x + -state.xSpeed, xSpeed: -state.xSpeed });
       setRandomColors();
     }
 
-    if (state.y + heightDVDLogo >= props.height || state.y <= 0) {
+    if (state.y + heightDVDLogo === props.height || state.y <= 0) {
       setState({ ...state, y: state.y + -state.ySpeed, ySpeed: -state.ySpeed });
       setRandomColors();
       return;
