@@ -2,8 +2,6 @@ import { Flex, Heading } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import DVDLogo from './DVDLogo';
 
-// window.addEventListener('resize', )
-
 const App = () => {
   const [h, setH] = useState(window.innerHeight);
   const [w, setW] = useState(window.innerWidth);

@@ -4,5 +4,10 @@
   "version": "1.0.0",
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+  "icons": {
+    "16": "src/public/favicon16.png",
+    "48": "src/public/favicon32.png",
+    "128": "src/public/favicon.ico"
   }
 }
