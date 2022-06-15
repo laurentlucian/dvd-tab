@@ -1,8 +1,11 @@
 import { Flex, Heading } from '@chakra-ui/react';
 import DVDLogo from './DVDLogo';
 
-const svgWidth = 800;
-const svgHeight = 600;
+const svgWidth = window.innerWidth;
+const svgHeight = window.innerHeight;
+// window.addEventListener('resize', )
+
+
 
 const App = () => {
   return (
